@@ -146,6 +146,8 @@ public class Block {
    *
    * @param block the block to be checked
    * @return true if block are on the same chain false otherwise
+   * 
+   * 直接用了 Object 里面的 equals
    */
   public boolean isOnSameChainAs(Block block) {
     if (block == null) {

@@ -77,6 +77,7 @@ public class SamplePoSBlock extends Block {
       this.totalDifficulty = parent.getTotalDifficulty().add(difficulty);
     }
     this.nextDifficulty = totalCoinage.multiply(
+            //当前区块的 nextDifficulty 被设置为 totalCoinage * getTargetInterval() / 1000
             BigInteger.valueOf(getTargetInterval())).divide(BigInteger.valueOf(1000)
     );
   }

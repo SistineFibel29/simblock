@@ -94,7 +94,7 @@ public class ProofOfWorkBlock extends Block {
     for (Node node : getSimulatedNodes()) {
       totalMiningPower += node.getMiningPower();
     }
-    genesisNextDifficulty = BigInteger.valueOf(totalMiningPower * getTargetInterval());
+    genesisNextDifficulty = BigInteger.valueOf(totalMiningPower * getTargetInterval()); // getTargetInterval() 是 simulator 中的一个常量 targetInterval，表示目标出块时间
     return new ProofOfWorkBlock(null, minter, 0, BigInteger.ZERO);
   }
 }

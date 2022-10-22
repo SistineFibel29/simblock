@@ -71,6 +71,8 @@ public class Coinage implements Cloneable {
 
   /**
    * Reward gained for consensus maintenance.
+   * 
+   * 当前货币的值改为 -> 当前货币 + （当前币龄 * 回报）
    *
    * @param reward the reward
    */
@@ -90,6 +92,10 @@ public class Coinage implements Cloneable {
     return this.getCoins().multiply(BigInteger.valueOf(this.getAge()));
   }
 
+
+  /**
+   * 这里是浅拷贝
+   */
   @Override
   public Coinage clone() {
     Coinage ret = null;

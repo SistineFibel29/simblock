@@ -285,13 +285,14 @@ public class Node {
    */
   public void addToChain(Block newBlock) {
     // If the node has been minting
+    // 如果正在挖矿的话就终止当前的任务
     if (this.mintingTask != null) {
       removeTask(this.mintingTask);
       this.mintingTask = null;
     }
     // Update the current block
     this.block = newBlock;
-    printAddBlock(newBlock);
+    printAddBlock(newBlock); //往 json 文件内打印添加区块的信息
     // Observe and handle new block arrival
     arriveBlock(newBlock, this);
   }
